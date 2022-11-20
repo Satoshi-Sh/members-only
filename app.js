@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 app.use('stylesheets/css', express.static(__dirname + '/node_modules/bootstrap-icons/icons'));
 app.use('/icons', express.static('./icons'));
 
-app.use(flash())
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -42,12 +42,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({ secret: process.env.SECRET, resave: false, saveUninitialized: true }));
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 app.use(compression());
 app.use(helmet());
-
+app.use(flash())
 app.use(methodOverride('_method'))
 
 app.use('/', indexRouter);
