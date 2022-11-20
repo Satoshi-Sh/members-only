@@ -9,6 +9,7 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "async": "^3.2.4",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^5.2.2",
     "bootstrap-icons": "^1.10.2",
@@ -31,8 +32,5 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "^2.5.0"
-  },
-  "devDependencies": {
-    "async": "^3.2.4"
   }
 }
