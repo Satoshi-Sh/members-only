@@ -1,0 +1,100 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+img {
+  width:30px;
+  height:30px;
+}
+
+label {
+  width:100px;
+}
+
+input[type='submit']{
+  width:100px;
+  text-align:center;
+}
+button[type='submit']{
+  background-color:rgba(255, 0, 0, 0.678);
+  border-radius:20px;
+}
+
+.red {
+  color: rgb(255, 0, 221);
+}
+.logout{
+  margin-top:6px;
+}
+footer {
+  position:relative;
+  height:10px;
+  width: 100%;
+  margin-top:30px;
+  text-align: center;
+}
+
+
+.board{
+  padding:20px;
+
+}
+
+.card {
+  min-height:80px;
+  padding:8px;
+  margin:10px;
+}
+
+.date {
+  font-weight:100;
+  color:rgba(128, 128, 128, 0.788);
+  font-size:15px;
+}
+.username {
+  font-weight:200;
+  color:rgba(128, 128, 128, 0.904);
+  font-size:15px;
+}
+
+.bottom {
+  display:flex;
+  justify-content: space-between;
+}
+
+form[action='/delete']{
+  text-align:center;
+}
+
+.delete-post{
+  width:30%;
+}
+
+#newlabel{
+  width:200px;
+}
+
+.newform{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+}
+
+textarea{
+  width:80%;
+  height:100px;
+}
+.post{
+    margin-top:40px;
+    padding:0;
+}
+
+#title{
+  margin:10px;
+}

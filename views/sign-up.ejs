@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head'); %>
+  <body>
+    <%- include('./partials/header'); %>
+    
+    <h1><img src="/icons/person-fill-add.svg"> <%= title %></h1>
+    <p class="mb-4">* If you have an account already, please log in.</p>
+    <% if (typeof errors !== "undefined") { %>
+      <p>Form could not be submitted due to the following error:</p>
+      <% for(var i=0; i < errors.length; i++) { %>
+        <p class="red"><%= errors[i].msg%></p>
+     <% } %>
+      <p><%= errors[0].msg %></p>
+  <% } %>
+
+  <% if (typeof useri !== "undefined") { %>
+    <form method="post" action="">
+      <p>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name" value=<%= useri.first_name %>>
+      </p>
+      <p>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name" value=<%= useri.last_name %>>
+      </p>
+      <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username" value=<%= useri.user_name %>>
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+      </p>
+      <p>
+        <label for="confirmation">Password Confirmation:</label>
+        <input type="password" name="confirmation" id="confirmation">
+      </p>
+      <p>
+        <input type="submit" value="Sign In">
+      </p>
+    </form>
+<% }
+else{ %>
+    <form method="post" action="">
+      <p>
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+      </p>
+      <p>
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+      </p>
+      <p>
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="username">
+      </p>
+      <p>
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password">
+      </p>
+      <p>
+        <label for="confirmation">Password Confirmation:</label>
+        <input type="password" name="confirmation" id="confirmation">
+      </p>
+      <p>
+        <input type="submit" value="Sign In">
+      </p>
+    </form>
+    <% } %>
+  </body>
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+</html>

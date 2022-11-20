@@ -1,0 +1,35 @@
+{
+  "name": "members-only",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^5.2.2",
+    "bootstrap-icons": "^1.10.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.3",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "helmet": "^6.0.0",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.6.1",
+    "luxon": "^3.1.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.2",
+    "morgan": "~1.9.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "async": "^3.2.4"
+  }
+}

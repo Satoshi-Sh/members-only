@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head'); %>
+  <body>
+    <%- include('./partials/header'); %>
+    <h1><img src="/icons/messenger.svg"> <%= title %></h1>
+    <% if (typeof user !="undefined") {%>
+      <h3>Welcome Back <%=user.user_name.replace(/\w/, c => c.toUpperCase()) %></h3>
+      <p>Status: <%=user.status.replace(/\w/, c => c.toUpperCase()) %></p>
+     
+      <%} else {%>
+        <h3>Welcome Guest</h3><%}
+        %>
+    <div class='board'>
+      <% if (typeof errors !='undefined') {%>
+        <p class="red"><%=errors[0]%></p>
+        <%}%>
+
+      <% if (typeof messages !='undefined') {%>
+      <% for(var i=0; i<messages.length; i++) {%>
+        <div class="card"> 
+          <h5 class="title"><%= messages[i].title%></h5>
+          <p><%= messages[i].text%></p>
+          <div class="bottom">
+            <% if (typeof user !='undefined') {%>
+              <% if (user.status !='none') {%>
+          <p class="username">Posted by <%= messages[i].user.user_name%></p>
+                <%} %>
+              <%}%>
+          <p class="date"><%= messages[i].date_formatted%></p>
+              </div>
+          <% if (typeof user !='undefined') {%>
+            <% if ( user.status =='admin') {%>
+              <form action="/delete" method="POST">
+                <input value=<%=messages[i]._id %> name='_id' hidden>
+                <button type="submit" class="delete-post">Delete</button>
+              </form>
+              <%} %>
+            <%}%>
+        </div>  
+        
+     <% } %>
+     <%}%> 
+    </div>
+    <% if (typeof user !='undefined') {%>
+    <form method="post" action="/newmessage" class="newform">
+          <input type="text" placeholder="Enter Title..." id ='title' name="title"
+          <% if (typeof post !='undefined') {%>
+            value="<%=post.title%>"
+            <%}%>
+          >
+          <textarea name="newmessage" id="newmessage" placeholder="Post new message.."><% if (typeof post !='undefined'){%><%=post.text%><%}%></textarea>
+          <input type="submit" value="Post" class="post">
+    </form>
+    <% } %>
+  </body>
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+</html>

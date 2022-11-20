@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <a class="navbar-brand" href="/"></a>
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Members Only</a>
+      </li>
+      <% if (typeof user !="undefined") {%>
+        <% if (user.status =="none") {%>
+        
+          <li class="nav-item">
+            <a class="nav-link" href="/become_member">Become Member</a>
+          </li>  
+  
+         
+        <%} else if(user.status=='member') {%>
+          <li class="nav-item">
+            <a class="nav-link" href="/become_admin">Become Admin</a>
+          </li>
+            <%}
+            %>
+        
+        <li class="nav-item">
+          <form action="/user/log-out" method="POST" class="logout">
+            <button type="submit">Log Out</button>
+          </form>
+        </li>  
+
+       
+      <%} else {%>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/sign-up">Signup</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/log-in">Login</a>
+        </li>
+          <%}
+          %>
+      
+      
+
+    </ul>
+  </nav>

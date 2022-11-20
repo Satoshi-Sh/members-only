@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/head'); %>
+  <body>
+    <%- include('./partials/header'); %>
+    <h1><img src="/icons/check-circle.svg"> <%= title %></h1>
+    <p>Admin can delete the messages</p>
+    <% if (typeof message !== "undefined") { %>
+        <p class="red"><%= message %></p>
+       <% } %>
+  <form method="post" action="">
+    <p>
+      <label for="password">Passcode:</label>
+      <input type="passcode" name="passcode" id="passcode" placeholder="Enter code..">
+    </p>
+    <p>
+      <input type="submit" value="Submit">
+    </p>
+  </form>
+  </body>
+  <footer>
+    <%- include('./partials/footer'); %>
+  </footer>
+</html>
